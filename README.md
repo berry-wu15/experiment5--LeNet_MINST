@@ -246,8 +246,12 @@ epoch:28,loss:0.039390,acc:0.987900
 epoch:29,loss:0.038174,acc:0.989000
 ```
 ##
-#### 3.3.
-
+#### 3.3.Display Feature Maps
+<table>
+ <tr>
+ <td><img src="./Experimental Image/feature maps.png" alt="feature maps"></td>
+ <tr>
+</table>
 
 
 
