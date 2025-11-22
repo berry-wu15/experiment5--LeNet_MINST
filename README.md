@@ -25,6 +25,7 @@
 ###### 用MINST数据集合构建数据批量处理器，并且自行补充实现LeNet网络结构，训练模型并输出loss和accuracy,最后观察训练过程中的特征图样式。附加：用训练权重识别交互式输入的手写数字0-9。
 ##
 #### 2.1.MNIST Dataset Loading and Processing
+##
 ##### （1）Import Pytorch and related tool libraries
 ###### 导入 PyTorch 及相关工具库
 ```
@@ -144,6 +145,7 @@ plt.show()
 
 ##
 #### 2.4.Supplemently requriement:interactive recognition of user-input handwritten digits(0-9)
+##
 ##### (1)Import related tool libraries.
 ```
 import numpy as np
