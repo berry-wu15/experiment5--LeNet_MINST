@@ -285,3 +285,40 @@ epoch:29,loss:0.038174,acc:0.989000
  <td><img src="./Experimental Image/interative recognition 6.png" width="200px" height="300px" alt="interactive recognition 6"></td>
  </tr>
 </table>
+
+```
+开始交互式数字识别...
+请在窗口中绘制数字，按's'识别，按'c'清除，按'q'退出
+识别结果: 1, 置信度: 0.5948
+识别结果: 2, 置信度: 1.0000
+识别结果: 5, 置信度: 1.0000
+识别结果: 5, 置信度: 0.5076
+识别结果: 6, 置信度: 0.9999
+识别结果: 1, 置信度: 1.0000
+识别结果: 4, 置信度: 1.0000
+识别结果: 0, 置信度: 0.9567
+识别结果: 0, 置信度: 0.9192
+```
+
+##
+#### 3.5.Analysis
+##### The LeNet-5 model was implemented and achieved 98.9% accuracy. An interactive digit recognition system was also built, but its performance needs further enhancement.
+###### 实验成功搭建了LeNet-5网络架构，并且完成了训练控制准确率在98.9%，最后还附加实现了交互手写数字识别任务，但精度还有待提高。
+
+##
+## 4.Experimental Summary
+#### 4.1.Overall Reflection on the Experiment
+###### 本次实验自己动手实现了LeNet-5网络卷积层，全连接层，池化层，分类层的定义。其中最需要注意的是特征维度的确定，下一层的输入维度应该等于前一层的输出维度。进一步加深了神经网络训练过程的步骤：定义数据处理器，定义网络结构，设置训练轮数，优化器的梯度设置，前向传播训练模型，计算交叉熵损失，反向传播优化模型参数。测试过程：禁止梯度计算，前向传播训练模型，计算交叉熵损失，预测模型，输出评价指标。
+##
+#### 4.2.Problems in the Experiment
+###### 本次实验过程中遇到运行崩溃的问题，添加了以下代码成功解决：
+```
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+```
+###### 实验中遇到了维度无法对齐的问题，通过在卷积层定义的时候加入填充padding成功解决。实验最后发现只是输出训练数据，所以添加交互式验证模型训练效果。
+##
+
+
+
+
