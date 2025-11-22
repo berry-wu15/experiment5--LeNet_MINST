@@ -257,8 +257,8 @@ epoch:29,loss:0.038174,acc:0.989000
 #### 3.4.Interactive Digit Recognition Demo
 <table>
  <tr>
- <td><img src="./Experimental Image/digit 0.png" width="300px" height="300px" alt="digit 0"></td>
- <td><img src="./Experimental Image/interative recognition 0.png" width="300px" height="300px" alt="interactive recognition 0"></td>
+ <td><img src="./Experimental Image/digit 0.png"  width="300px" height="200px" alt="digit 0"></td>
+ <td><img src="./Experimental Image/interative recognition 0.png" width="300px" height="200px" alt="interactive recognition 0"></td>
  </tr>
 </table>
 
