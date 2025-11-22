@@ -249,11 +249,17 @@ epoch:29,loss:0.038174,acc:0.989000
 #### 3.3.Display Feature Maps
 <table>
  <tr>
- <td><img src="./Experimental Image/feature maps.png" alt="feature maps"></td>
+ <td><img src="./Experimental Image/feature maps.png"  height="350px" alt="feature maps"></td>
  <tr>
 </table>
-
-
+##
+#### 3.4.Interactive Digit Recognition Demo
+<table>
+ <tr>
+ <td><img src="./Experimental Image/digit 0.jpg" width="500px" height="300px" alt="图片1"></td>
+ <td><img src="./Experimental Image/interactive recognition 0.jpg" width="500px" height="300px" alt="图片2"></td>
+ </tr>
+</table>
 
 
 
