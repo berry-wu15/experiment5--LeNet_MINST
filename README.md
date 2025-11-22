@@ -143,7 +143,7 @@ plt.show()
 ###### 结果：原始输入图像的numpy数组
 
 ##
-#### 2.4.Supplemently requriement:interactive recognition of user-input handwritten gigits(0-9)
+#### 2.4.Supplemently requriement:interactive recognition of user-input handwritten digits(0-9)
 ##### (1)Import related tool libraries.
 ```
 import numpy as np
