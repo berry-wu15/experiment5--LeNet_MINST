@@ -142,6 +142,114 @@ plt.show()
 ###### [:n] - 只取前n个样本
 ###### 结果：原始输入图像的numpy数组
 
+##
+#### 2.4.Supplemently requriement:interactive recognition of user-input handwritten gigits(0-9)
+##### (1)Import related tool libraries.
+```
+import numpy as np
+import cv2
+from PIL import Image
+```
+##
+##### (2)Process the input data.
+```
+def preprocess_image(image):
+    """预处理手写数字图像"""
+    # 转换为灰度图 - 如果输入是彩色图像(3通道)，转换为单通道灰度图
+    if len(image.shape) == 3:
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    
+    # 调整大小为28x28 - MNIST数据集的标准输入尺寸
+    image = cv2.resize(image, (28, 28))
+    
+    # 反转颜色（MNIST是白底黑字，我们绘制的是黑底白字）
+    # 因为我们是在白色画布上画黑色数字，而MNIST是黑色背景白色数字
+    image = 255 - image
+    
+    # 归一化并转换为tensor - 将像素值从0-255缩放到0-1之间
+    image = image.astype(np.float32) / 255.0
+    # 添加batch和channel维度: (28,28) -> (1,1,28,28)
+    image = torch.from_numpy(image).unsqueeze(0).unsqueeze(0)  
+    return image.to(device)  # 移动到GPU或CPU设备
+```
+##
+##### (3)Initialize a canvas.
+```
+def draw_digit():
+    """绘制数字并识别"""
+    # 创建画布 - 280x280的白色画布（255表示白色）
+    canvas = np.ones((280, 280), dtype=np.uint8) * 255
+    drawing = False  # 标记是否正在绘制
+    
+    def draw_circle(event, x, y, flags, param):
+        nonlocal drawing, canvas
+        if event == cv2.EVENT_LBUTTONDOWN:  # 鼠标左键按下
+            drawing = True
+            ...............
+```
+##
+##### (4)Predict digit from input canvas.
+```
+if key == ord('s'):  # 按's'键进行识别
+            # 预处理图像 - 将绘制的图像转换为模型可接受的格式
+            processed_img = preprocess_image(canvas)
+            
+            # 使用训练好的模型进行预测
+            with torch.no_grad():  # 不计算梯度，节省内存
+                output = model(processed_img)  # 模型前向传播
+                prediction = torch.argmax(output, dim=1).item()  # 获取预测结果（最大概率的类别）
+                probabilities = F.softmax(output, dim=1)[0]  # 计算每个类别的概率
+    
+            # 显示结果 - 在原画布上添加识别结果文字
+            result_canvas = canvas.copy()
+            # 在画布上显示预测结果
+            cv2.putText(result_canvas, f'Prediction: {prediction}', (10, 30), 
+                       cv2.FONT_HERSHEY_SIMPLEX, 1, 0, 2)  # 字体、大小、颜色、粗细
+            # 在画布上显示置信度
+            cv2.putText(result_canvas, f'Confidence: {probabilities[prediction]:.2f}', (10, 70), 
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
+            cv2.imshow('Result', result_canvas)  # 显示结果窗口
+```
+
+##
+## 3.Experimental Results and Analysis
+#### 3.1.Model Structure Output
+```
+Net(
+  (conv1): Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+  (conv2): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(in_features=256, out_features=120, bias=True)
+  (fc2): Linear(in_features=120, out_features=84, bias=True)
+  (clf): Linear(in_features=84, out_features=10, bias=True)
+  (relu): Sigmoid()
+  (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+)
+```
+##
+#### 3.2.Training Log(epoch,loss,accuracy)
+```
+epoch:0,loss:2.301466,acc:0.113500
+epoch:1,loss:2.301534,acc:0.113500
+epoch:2,loss:2.301126,acc:0.113500
+epoch:3,loss:2.301366,acc:0.113500
+epoch:4,loss:2.300994,acc:0.113500
+epoch:5,loss:2.095140,acc:0.225700
+epoch:6,loss:0.536351,acc:0.821200
+epoch:7,loss:0.176625,acc:0.946100
+epoch:8,loss:0.112669,acc:0.963600
+.........
+epoch:25,loss:0.033249,acc:0.988900
+epoch:26,loss:0.039878,acc:0.988200
+epoch:27,loss:0.039106,acc:0.988600
+epoch:28,loss:0.039390,acc:0.987900
+epoch:29,loss:0.038174,acc:0.989000
+```
+##
+#### 3.3.
+
+
+
 
 
 
