@@ -257,11 +257,31 @@ epoch:29,loss:0.038174,acc:0.989000
 #### 3.4.Interactive Digit Recognition Demo
 <table>
  <tr>
- <td><img src="./Experimental Image/digit 0.png"  width="250px" height="300px" alt="digit 0"></td>
- <td><img src="./Experimental Image/interative recognition 0.png" width="250px" height="300px" alt="interactive recognition 0"></td>
+ <td><img src="./Experimental Image/digit 0.png"  width="200px" height="300px" alt="digit 0"></td>
+ <td><img src="./Experimental Image/interative recognition 0.png" width="200px" height="300px" alt="interactive recognition 0"></td>
  </tr>
 </table>
-
-
-
-
+<table>
+ <tr>
+ <td><img src="./Experimental Image/digit 1.png"  width="200px" height="300px" alt="digit 1"></td>
+ <td><img src="./Experimental Image/interative recognition 1.png" width="200px" height="300px" alt="interactive recognition 1"></td>
+ </tr>
+</table>
+<table>
+ <tr>
+ <td><img src="./Experimental Image/digit 2.png"  width="200px" height="300px" alt="digit 2"></td>
+ <td><img src="./Experimental Image/interative recognition 2.png" width="200px" height="300px" alt="interactive recognition 2"></td>
+ </tr>
+</table>
+<table>
+ <tr>
+ <td><img src="./Experimental Image/digit 5.png"  width="200px" height="300px" alt="digit 5"></td>
+ <td><img src="./Experimental Image/interative recognition 5.png" width="200px" height="300px" alt="interactive recognition 5"></td>
+ </tr>
+</table>
+<table>
+ <tr>
+ <td><img src="./Experimental Image/digit 6.png"  width="200px" height="300px" alt="digit 6"></td>
+ <td><img src="./Experimental Image/interative recognition 6.png" width="200px" height="300px" alt="interactive recognition 6"></td>
+ </tr>
+</table>
