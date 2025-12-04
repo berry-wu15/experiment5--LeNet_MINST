@@ -4,7 +4,7 @@
 
 ##
 
-## 1.Exprimental Purpose
+## 1.Experimental Purpose
 ##### 1.Understand core concepts such as convolution,pooling,and activation functions.
 ##### 2.Implement the classic LeNet-5 model structure.
 ##### 3.Master the complete workflow of model building,training,and evaluation.
